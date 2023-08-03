@@ -1,6 +1,12 @@
 import { menuAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
+/**
+ * DROPDOWNSTYLE.TSX 
+ * FILE TO CHANGE DEFAULT STYLE OF DROPDOWN IN NAVBAR.
+ * SOME STYLES CAN BE CHANGED HERE, OTHERS IN PROPS. REFER TO CHAKRA UI DOCS
+ */
+
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(menuAnatomy.keys)
 

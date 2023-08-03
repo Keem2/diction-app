@@ -1,6 +1,12 @@
 import { inputAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 
+/**
+ * SEARCHBARSTYLE.TSX 
+ * FILE TO CHANGE DEFAULT STYLE OF INPUT BAR.
+ * SOME STYLES CAN BE CHANGED HERE, OTHERS IN PROPS. REFER TO CHAKRA UI DOCS
+ */
+
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(inputAnatomy.keys)
 

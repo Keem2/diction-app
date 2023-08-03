@@ -14,6 +14,12 @@ import {
     ChakraProvider,
   } from '@chakra-ui/react'
   import theme from '../theme';
+
+/**
+ * DROPDOWN COMPONENT
+ * THIS IS THE DROPDOWN MENU IN NAVBAR
+ * @returns DROPDOWN COMPONENT
+ */
 //type Props = {}
 
 export const Dropdown = () => {

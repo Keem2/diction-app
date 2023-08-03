@@ -3,11 +3,15 @@ import React from 'react'
 import { ChakraProvider, Input, InputGroup, InputRightElement} from '@chakra-ui/react'
 import theme from '../theme';
 
-
+/**
+ * SEARCHBAR COMPONENT
+ * THIS IS THE INPUT BAR ON THE PAGE
+ * @returns SEARCHBAR COMPONENT
+ */
 type Props = {
     placeholder:string,
-    variant:string,
-    focusBorderColor:string
+    variant?:string,
+    focusBorderColor?:string
 }
 
 const SearchBar = (props: Props) => {

@@ -8,12 +8,17 @@ const gelasio = Gelasio({
   weight:['400','500','600','700'],
   subsets: ['latin'] })
 
+  /**
+ * NAVBAR COMPONENT
+ * THIS IS THE NAVIGATION BAR ON THE TOP OF THE PAGE
+ * @returns NAVBAR COMPONENT
+ */
 //type Props = {}
 
 export const Navbar = () => {
   return (
     <div className='flex justify-between items-middle'>
-        <p className="font-logo text-black text-3xl mt-1">diction</p>
+        <p className="font-logo text-black text-3xl mt-1 select-none">diction</p>
 
         
         <div className='flex justify-between gap-7'>
