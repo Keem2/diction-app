@@ -3,35 +3,39 @@
 import SearchBar from '../components/searchbar/searchbar'
 import Landing from '../components/landing'
 import React, { useEffect, useState } from 'react';
+import { Dropdown } from '../components/dropdown/dropdown';
 
 
 export default function Home() {
-  let font:string; 
+  let font;
 
-  const [currentTypeFace, setCurrentTypeFace] = useState('');
+  font = JSON.parse(window.localStorage.getItem('currentTypeFace') || '{}');
+   
+   
+ 
+   const [currentTypeFace, setCurrentTypeFace] = useState(font);
 
-  /**
+ 
+   /**
    * Re-renders the component after changing the dropdown value
    */
+  
   useEffect(() =>{
     const updateTypography = () => {
-       const typeface = JSON.parse(localStorage.getItem('currentTypeFace') || '{}');
-
+       const typeface = JSON.parse(window.localStorage.getItem('currentTypeFace') || '{}');
        
-      if(typeface === "Monospace"){
+      if(typeface === "font-mono"){
         setCurrentTypeFace('font-mono');
-      } else if(typeface === "Sans Serif"){
+      } else if(typeface === "font-sans"){
         setCurrentTypeFace('font-sans');
-      } else if(typeface === "Serif"){
+      } else if(typeface === "font-serif"){
         setCurrentTypeFace('font-serif');
       }
     }
 
     window.addEventListener('storage', updateTypography);
     return () => window.removeEventListener('storage',updateTypography)
-  },[])
-
-
+  },[font])
 
 
   return (
@@ -47,4 +51,5 @@ export default function Home() {
 
    </div>
   )
-}
+  }
+

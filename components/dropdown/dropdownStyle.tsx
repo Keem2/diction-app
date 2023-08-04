@@ -14,15 +14,14 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const baseStyle = definePartsStyle({
   // define the part you're going to style
   button: {
-    // this will style the MenuButton component
-    fontWeight: 'light',
+    color:'black',
     _hover: {
       color: 'white',
+      bg:'white',
     },
   },
   list: {
     // this will style the MenuList component
-    bg:'white',
     py: '1',
     borderRadius: 'xl',
     boxShadow:'md',
@@ -33,6 +32,7 @@ const baseStyle = definePartsStyle({
     color: 'black',
     _hover: {
       color: '#D52DD5',
+      bg:'white'
     },
   },
 })
