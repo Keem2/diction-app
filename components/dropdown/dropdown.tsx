@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Menu,
     MenuButton,
@@ -14,6 +14,7 @@ import {
     ChakraProvider,
   } from '@chakra-ui/react'
   import theme from '../theme';
+import { type } from 'os';
 
 /**
  * DROPDOWN COMPONENT
@@ -24,7 +25,13 @@ import {
 
 export const Dropdown = () => {
 
-  const [typeFace, setTypeFace] = useState('Serif');
+  const [typeFace, setTypeFace] = useState("Serif");
+
+  useEffect(() => {
+    localStorage.setItem('currentTypeFace', JSON.stringify(typeFace))
+    window.dispatchEvent(new Event('storage'));
+  },[typeFace])
+
 
   return (
     <ChakraProvider theme={theme}>
