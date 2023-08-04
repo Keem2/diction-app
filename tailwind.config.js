@@ -9,12 +9,9 @@ module.exports = {
     extend: {
       fontFamily:{
         logo: ['Borel', 'cursive'],
-        logo2: ['Montserrat', 'sans-serif'],
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        serif: ['var(--font-gelasio)'],
+        sans:['var(--font-plus-jakarta-sans)'],
+        mono:['var(--font-inconsolata)']
       },
     },
   },

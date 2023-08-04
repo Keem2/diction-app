@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Menu,
     MenuButton,
@@ -23,6 +23,9 @@ import {
 //type Props = {}
 
 export const Dropdown = () => {
+
+  const [typeFace, setTypeFace] = useState('Serif');
+
   return (
     <ChakraProvider theme={theme}>
     <Menu>
@@ -31,12 +34,12 @@ export const Dropdown = () => {
 </svg>
 
 }>
-    Serif
+    {typeFace}
   </MenuButton>
   <MenuList>
-    <MenuItem>Serif</MenuItem>
-    <MenuItem>Sans Serif</MenuItem>
-    <MenuItem>Monospace</MenuItem>
+    <MenuItem onClick={()=>setTypeFace('Serif')}>Serif</MenuItem>
+    <MenuItem onClick={()=>setTypeFace('Sans Serif')}>Sans Serif</MenuItem>
+    <MenuItem onClick={()=>setTypeFace('Monospace')}>Monospace</MenuItem>
   </MenuList>
 </Menu>
 </ChakraProvider>
