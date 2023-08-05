@@ -3,6 +3,7 @@ import './globals.css'
 import { Navbar }from '../components/navbar';
 import type { Metadata } from 'next';
 import { Providers } from "./providers";
+import Nossr from './nossr';
 
 export const metadata: Metadata = {
   title: 'Diction',
@@ -28,7 +29,11 @@ const inconsolata = Inconsolata({
   variable:'--font-inconsolata'
 })
 
-
+/**
+ * 
+ * NOSSR tags wrapped around layout to disable SSR. Was getting hydration errors on refresh 
+ * 
+ */
 
 export default function RootLayout({
   children,
@@ -39,14 +44,15 @@ export default function RootLayout({
     <html lang="en" className={`${gelasio.variable} ${plusJakarta.variable} ${inconsolata.variable}`}>
       <body className='overflow-x-hidden'>
         <div className='mt-10 mx-5 lg:mx-52'>
-          <Providers>
-      <Navbar/>
+        <Nossr>
+          <Providers >
+        <Navbar />
         {children}
         </Providers>
+        </Nossr>
         </div>
-        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
       </body>
-      
     </html>
+    
   )
 }

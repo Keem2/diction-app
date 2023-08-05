@@ -28,7 +28,7 @@ const CURRENT_TYPEFACE = 'currentTypeFace';
 
 let fontTypeString = '';
 
-export const Dropdown = () => {
+const Dropdown = () => {
   /**
    * Initalising localStorage currentTypeFace
    */
@@ -36,13 +36,13 @@ export const Dropdown = () => {
   let fontType;
   if(typeof window !== 'undefined'){
 
-    fontType = JSON.parse(window.localStorage.getItem(CURRENT_TYPEFACE) || '{}');
+    fontType = JSON.parse(window.localStorage.getItem(CURRENT_TYPEFACE) || '"font-serif"');
 
-if(fontType == 'font-serif'){
+if(fontType === 'font-serif'){
   fontTypeString = 'Serif'
-} else if(fontType == 'font-sans'){
+} else if(fontType === 'font-sans'){
   fontTypeString = 'Sans Serif'
-} else if(fontType == 'font-mono'){
+} else if(fontType === 'font-mono'){
   fontTypeString = 'Monospace'
 }
 }
@@ -103,3 +103,5 @@ if(fontType == 'font-serif'){
 </ChakraProvider>
   )
 };
+
+export default Dropdown;

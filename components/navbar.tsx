@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Gelasio } from 'next/font/google'
-import { Dropdown } from './dropdown/dropdown';
+import  Dropdown  from './dropdown/dropdown';
 
 const gelasio = Gelasio({ 
   weight:['400','500','600','700'],
