@@ -1,9 +1,11 @@
+
 import { Gelasio, Plus_Jakarta_Sans, Inconsolata } from 'next/font/google'
 import './globals.css'
 import { Navbar }from '../components/navbar';
 import type { Metadata } from 'next';
 import { Providers } from "./providers";
 import Nossr from './nossr';
+import { ThemeProvider } from './next-theme-provider';
 
 export const metadata: Metadata = {
   title: 'Diction',
@@ -29,6 +31,8 @@ const inconsolata = Inconsolata({
   variable:'--font-inconsolata'
 })
 
+
+
 /**
  * 
  * NOSSR tags wrapped around layout to disable SSR. Was getting hydration errors on refresh 
@@ -40,9 +44,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  
   return (
     <html lang="en" className={`${gelasio.variable} ${plusJakarta.variable} ${inconsolata.variable}`}>
-      <body className='overflow-x-hidden'>
+      <body className='overflow-x-hidden bg-white dark:bg-gray-800'>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
         <div className='mt-10 mx-5 lg:mx-52'>
         <Nossr>
           <Providers >
@@ -51,8 +58,8 @@ export default function RootLayout({
         </Providers>
         </Nossr>
         </div>
+        </ThemeProvider>
       </body>
-    </html>
-    
+   </html>   
   )
 }

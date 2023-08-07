@@ -16,7 +16,12 @@ const baseStyle = definePartsStyle({
     fontFamily: 'sans-serif', // change the font family
     color: 'black', // change the input text color
     py:'6',
-    borderRadius:'15'
+    borderRadius:'16',
+
+    _dark:{
+      color:'white',
+      bg:'gray.700'
+    },
   },
 })
 

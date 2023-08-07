@@ -15,10 +15,19 @@ const baseStyle = definePartsStyle({
   // define the part you're going to style
   button: {
     color:'black',
+    bg:'teal.500',
     _hover: {
       color: 'white',
       bg:'white',
     },
+
+    _dark:{
+      color:'white',
+      _hover:{
+        color:'red.200'
+      },
+
+    }
   },
   list: {
     // this will style the MenuList component
@@ -32,9 +41,20 @@ const baseStyle = definePartsStyle({
     color: 'black',
     _hover: {
       color: '#D52DD5',
-      bg:'white'
     },
+
+    _dark:{
+      color:'white',
+
+      _hover:{
+        color: '#D52DD5',
+        
+      }
+    }
   },
+  groupTitle:{
+    color:'white'
+  }
 })
 // export the base styles in the component theme
 export const dropdownTheme = defineMultiStyleConfig({ baseStyle })
