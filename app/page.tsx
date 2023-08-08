@@ -2,7 +2,8 @@
 
 import SearchBar from '../components/searchbar/searchbar'
 import Landing from '../components/landing'
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
+import Result from '../components/result';
 
 
 export default function Home(){
@@ -46,6 +47,10 @@ export default function Home(){
       <section className='flex items-center justify-center h-96'>
         <Landing />
       </section>
+
+    <section>
+        <Result word='page'/>
+    </section>
    </div>
   )
   }
