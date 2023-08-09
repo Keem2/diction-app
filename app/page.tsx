@@ -2,9 +2,8 @@
 
 import SearchBar from '../components/searchbar/searchbar'
 import Landing from '../components/landing'
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import Result from '../components/result';
-
 
 export default function Home(){
 
@@ -38,19 +37,29 @@ export default function Home(){
   return () => window.removeEventListener('storage',updateTypography)
   },[])
 
+  /**
+   * STATE FOR SEARCH WORD AND TIMES SEARCHED
+   */
+
+  const [searchWord, setSearchWord] = useState('');
+  const [timesSearched, setTimesSearched] = useState(0);
+
   return (
     <div className={`${currentTypeFace}`}>
       <section className='my-6 mx-3'>
-      <SearchBar placeholder='Search for a word... ' variant='filled' focusBorderColor='#D52DD5'/>
+      <SearchBar placeholder='Search for a word... ' variant='filled' focusBorderColor='#D52DD5' setValue={setSearchWord} setTimesSearched={setTimesSearched}/>
       </section>
 
+      { timesSearched === 0 ? (
       <section className='flex items-center justify-center h-96'>
         <Landing />
       </section>
-
+      ):(
     <section>
-        <Result word='page'/>
+        <Result word={searchWord}/>
     </section>
+      )
+    }
    </div>
   )
   }

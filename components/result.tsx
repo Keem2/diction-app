@@ -21,20 +21,25 @@ export default function Result(props:Props) {
         <div>
         <h1 className='text-5xl font-bold '>{result.word}</h1>
         <p className='mt-3 text-purple-600'>{result.phonetic}</p>
-        
 
-            {result.phonetics.map((button:any):any =>
-            <>
-            <button className='bg-purple-300 rounded-full py-4 px-4' onClick={()=>{
-                let audio = new Audio(button.audio);
-                audio.play();
-            }}><svg xmlns="http://www.w3.org/2000/svg" fill="#A611A6" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#A611A6" className="w-8 h-8">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-            </svg>
-        </button>
-            </>
-            )}
-
+        <div>
+        {result.phonetics[0].audio === '' ? 
+         <button className='bg-purple-300 rounded-full py-4 px-4' onClick={()=>{
+            let audio = new Audio(result.phonetics[1].audio);
+            audio.play();
+        }}><svg xmlns="http://www.w3.org/2000/svg" fill="#A611A6" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#A611A6" className="w-8 h-8">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+        </svg>
+    </button> : <button className='bg-purple-300 rounded-full py-4 px-4' onClick={()=>{
+            let audio = new Audio(result.phonetics[0].audio);
+            audio.play();
+        }}><svg xmlns="http://www.w3.org/2000/svg" fill="#A611A6" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#A611A6" className="w-8 h-8">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+        </svg>
+    </button>
+        }
+        </div>
+    
         
         {// Meanings Array
         }
