@@ -48,7 +48,7 @@ export default function RootLayout({
   
   return (
     <html lang="en" className={`${gelasio.variable} ${plusJakarta.variable} ${inconsolata.variable}`}>
-      <body className='overflow-x-hidden bg-white dark:bg-gray-800'>
+      <body className='overflow-x-hidden bg-white dark:bg-zinc-800'>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
         <div className='mt-10 mx-5 lg:mx-52'>
         <Nossr>

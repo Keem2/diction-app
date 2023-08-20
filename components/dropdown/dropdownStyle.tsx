@@ -35,10 +35,13 @@ const baseStyle = definePartsStyle({
     borderRadius: 'xl',
     boxShadow:'md',
     border: 'none',
+    _dark:{
+    bg:'#434243'
+    },
   },
   item: {
     // this will style the MenuItem and MenuItemOption components
-    color: 'black',
+    color: '#434243',
     _hover: {
       color: '#D52DD5',
     },

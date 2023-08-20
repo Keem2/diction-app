@@ -55,7 +55,7 @@ export default function Home(){
         <Landing />
       </section>
       ):(
-    <section>
+    <section className='mx-5'>
         <Result word={searchWord}/>
     </section>
       )
