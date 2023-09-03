@@ -100,12 +100,12 @@ if(fontType === 'font-serif'){
   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg>
 }>
-    {fontTypeString}
+    <p className={`${typeFace}`}>{fontTypeString}</p>
   </MenuButton>
   <MenuList>
-    <MenuItem onClick={()=>changeTypeFace('font-serif')}>Serif</MenuItem>
-    <MenuItem onClick={()=>changeTypeFace('font-sans')}>Sans Serif</MenuItem>
-    <MenuItem onClick={()=>changeTypeFace('font-mono')}>Monospace</MenuItem>
+    <MenuItem className= 'font-serif' onClick={()=>changeTypeFace('font-serif')}>Serif</MenuItem>
+    <MenuItem className= 'font-sans' onClick={()=>changeTypeFace('font-sans')}>Sans Serif</MenuItem>
+    <MenuItem  className= 'font-mono' onClick={()=>changeTypeFace('font-mono')}>Monospace</MenuItem>
   </MenuList>
 </Menu>
 </ChakraProvider>
