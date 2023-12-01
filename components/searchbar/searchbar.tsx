@@ -33,7 +33,7 @@ const SearchBar = (props: Props) => {
   
 
   const containsSpecialChars = (str:string):boolean => {
-    const specialChars = /[` !@#$%^&*()_+\-=\[\]{};/':"\\|,.<>\/?~0123456789]/;
+    const specialChars = /[`!@#$%^&*()_+\=\[\]{};/':"\\|,.<>\/?~0123456789]/;
     return specialChars.test(str);
   }
 

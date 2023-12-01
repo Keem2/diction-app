@@ -47,6 +47,7 @@ export default function RootLayout({
 
   
   return (
+    //placing different fonts in html tag so they can be used throughout the page
     <html lang="en" className={`${gelasio.variable} ${plusJakarta.variable} ${inconsolata.variable}`}>
       <body className='overflow-x-hidden bg-white dark:bg-zinc-800'>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>

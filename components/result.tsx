@@ -3,9 +3,6 @@ import useSWR from 'swr'
 import { Stack, Skeleton } from '@chakra-ui/react';
 
 
-let wordNotFound: boolean;
-let status:number;
-
 const fetcher = async (url:string) => 
 {
     const res = await fetch(url);
@@ -26,7 +23,7 @@ export default function Result(props:Props) {
  
     if (error) return <div className='text-center mt-20'>
         <h1 className='text-4xl mb-5 font-bold md:text-5xl'>No Definitions Found</h1>
-        <p>We couldnt find the word you were looking for.</p>
+        <p>We couldn't find the word you were looking for.</p>
     </div>
     if (!data) return (
     <Stack>
@@ -39,18 +36,9 @@ export default function Result(props:Props) {
     </Stack>
     )
 
-    console.log(data);
-    let result;
+   //console.log(data);
     
-    {error ? 
-        result = ( 
-            <section className='text-center'>
-                <h1 className=''>{data.title}</h1>
-            <p className=''>{data.message}</p>
-            <p className=''>{data.resolution}</p>
-            </section>
-    
-    ): result = data.map((result:any):any => 
+    const result = data.map((result:any):any => 
     (
     <>
     
@@ -117,7 +105,7 @@ export default function Result(props:Props) {
 
     </>
     )
-    )}
+    )
 
     return (
         <>
