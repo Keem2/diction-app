@@ -15,10 +15,8 @@ const baseStyle = definePartsStyle({
   // define the part you're going to style
   button: {
     color:'black',
-    bg:'teal.500',
     _hover: {
       color: 'white',
-      bg:'white',
     },
 
     _dark:{

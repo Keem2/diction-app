@@ -92,11 +92,11 @@ if(fontType === 'font-serif'){
   }
   
 
-
+//px in menubutton fixed overflow issue
   return (
     <ChakraProvider theme={theme}>
     <Menu>
-  <MenuButton  _expanded={{ bg: 'gray.200', _dark:{bg:'#434243'} }} className=' text-black dark:text-white dark:hover:bg-neutral-700' as={Button} rightIcon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 18" strokeWidth={1.5} stroke="#D52DD5" className="w-4 h-6 ml-2">
+  <MenuButton px={5} _expanded={{ bg: 'gray.200', _dark:{bg:'#434243'} }} className=' text-black dark:text-white dark:hover:bg-neutral-700 ml-8' as={Button} rightIcon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 18" strokeWidth={1.5} stroke="#D52DD5" className="w-4 h-6 ml-2">
   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg>
 }>

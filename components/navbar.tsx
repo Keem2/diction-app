@@ -39,7 +39,7 @@ export const Navbar = () => {
         
         <div className='flex justify-between gap-7'>
 
-          <div className='relative bottom-2 -mr-3 hover:active:bg-purple-200 rounded-md'>
+          <div className='relative bottom-2 -mr-3 rounded-md'>
          <Dropdown/>
          </div>
 
