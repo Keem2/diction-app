@@ -36,7 +36,7 @@ export default function Result(props:Props) {
     </Stack>
     )
 
-   console.log(data);
+   //console.log(data);
     
     const result = data.map((result:any):any => 
     (
