@@ -36,7 +36,7 @@ export default function Result(props:Props) {
     </Stack>
     )
 
-   //console.log(data);
+   console.log(data);
     
     const result = data.map((result:any):any => 
     (
@@ -49,9 +49,10 @@ export default function Result(props:Props) {
     </div>
 
     <div>
-    {result.phonetics.length > 0 ? 
+    {result.phonetics.length !== 1 || result.phonetics[0].audio !== '' ? 
      <button className='bg-purple-300 rounded-full py-4 px-4' onClick={()=>{
-        let audio = new Audio(result.phonetics[0].audio);
+        let audio;
+        result.phonetics[0].audio === '' ? audio = new Audio(result.phonetics[1].audio):audio = new Audio(result.phonetics[0].audio);
         audio.play();
     }}><svg xmlns="http://www.w3.org/2000/svg" fill="#650D65" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#650D65" className="w-8 h-8">
 <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
